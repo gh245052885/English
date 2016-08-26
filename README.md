@@ -32,4 +32,6 @@ git pull =git fetch+git merge
 
 ## code diff
 
-  git diff
+  git 
+
+## Add SSH key in website
