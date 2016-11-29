@@ -88,3 +88,7 @@ $ npm install --global gulp
 * 1.2. 作为项目的开发依赖（devDependencies）安装：
 
 $ npm install --save-dev gulp
+
+
+
+Angular应用的：用带Angular扩展语法的HTML写模板， 用组件类管理这些模板，用服务添加应用逻辑， 用模块打包发布组件与服务。

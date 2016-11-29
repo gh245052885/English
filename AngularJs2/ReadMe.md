@@ -27,8 +27,10 @@
  模块 (Modules)
 
 ## 组件 (Components)
+组件负责控制屏幕上的一小块区域，称之为视图。
+组件由 HTML 模板和'组件'类组成，组件类控制视图
 实现一个组件很简单，定义一个类，然后给这加注解
-
+selector 属性为 Angular 指定了在index.html中的自定义<my-app>标签里显示该组件
 @Component({selector:"ez-app"})
 @View({template:"<h1>Hello,Angular2</h1>"})
 class EzApp{}
