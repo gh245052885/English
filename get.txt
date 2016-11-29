@@ -1,3 +1,5 @@
+git pull https://github.com/wyyyy/English
+
 git remote add origin https://github.com/wyyyy/English
 
 git pull origin master
