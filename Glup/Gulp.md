@@ -24,3 +24,6 @@ npm install --save-dev gulp-clean-css
 * js   gulp-uglify
 *  rename = require('gulp-rename'),
 *
+
+### Tip
+项目当中基本所有的插件基本都在JS文件中
