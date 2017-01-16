@@ -12,7 +12,8 @@
   "author": "wzh",
   "license": "ISC",
   "dependencies": {
-    "nodemailer": "^2.7.0",
-     "node-schedule": "*"
+    "log4js": "^1.1.0",
+    "node-schedule": "*",
+    "nodemailer": "^2.7.0"
   }
 }

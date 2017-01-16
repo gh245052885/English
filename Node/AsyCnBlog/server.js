@@ -4,7 +4,14 @@ var http = require("http"),
 	cheerio = require("cheerio"),
 	async = require("async"),
 	eventproxy = require('eventproxy');
-
+var log4js = require('log4js');
+log4js.configure({
+	appenders: [
+		{ type: 'console' },
+		{ type: 'file', filename: '../logs/AsyCnBlog.log', category: 'log' }
+	]
+});
+var logger = log4js.getLogger('log');
 var ep = new eventproxy();
 
 var catchFirstUrl = 'http://www.cnblogs.com/',	//入口页面
@@ -15,9 +22,11 @@ var catchFirstUrl = 'http://www.cnblogs.com/',	//入口页面
 	pageNum = 200,	//要爬取文章的页数
 	startDate = new Date(),	//开始时间
 	endDate = false;	//结束时间
-
+var strurl = '';
 for (var i = 1; i <= pageNum; i++) {
-	pageUrls.push('http://www.cnblogs.com/?CategoryId=808&CategoryType=%22SiteHome%22&ItemListActionName=%22PostList%22&PageIndex=' + i + '&ParentCategoryId=0');
+	strurl = 'http://www.cnblogs.com/?CategoryId=808&CategoryType=%22SiteHome%22&ItemListActionName=%22PostList%22&PageIndex=' + i + '&ParentCategoryId=0';
+	//logger.info(strurl);
+	pageUrls.push(strurl);
 }
 
 // 抓取昵称、入园年龄、粉丝数、关注数
@@ -56,7 +65,8 @@ function personInfo(url) {
 				infoArray.fans = info.eq(3).text();
 				infoArray.focus = info.eq(4).text();
 			}
-			//console.log('用户信息:'+JSON.stringify(infoArray));
+			onsole.log('用户信息:' + JSON.stringify(infoArray));
+			logger.info('用户信息:' + JSON.stringify(infoArray));
 			catchDate.push(infoArray);
 		});
 }

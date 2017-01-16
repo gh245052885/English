@@ -1,0 +1,55 @@
+ "queryLeftNewDTO": {
+                "train_no": "55000D450220",车次
+                "station_train_code": "D4502",//车次
+                "start_station_telecode": "SHH",
+                "start_station_name": "上海",
+                "end_station_telecode": "EAY",
+                "end_station_name": "西安北",
+                "from_station_telecode": "SHH",
+                "from_station_name": "上海",
+                "to_station_telecode": "ZAF",到达站
+                "to_station_name": "郑州东",
+                "start_time": "00:37",出发时间
+                "arrive_time": "05:33",到达时间
+                "day_difference": "0",
+                "train_class_name": "动车",
+                "lishi": "04:56",历时
+                "canWebBuy": "N",
+                "lishiValue": "296",分钟 
+                "yp_info": "BVhrAXNQ5F%2FAP1ADYe8Z8B%2BUjJhEEYau3mTiSZnKX6Qb30M5",
+                "control_train_day": "20300303",
+                "start_train_date": "20170121",出发时期
+                "seat_feature": "O3M3W3",
+                "yp_ex": "O0M0O0",
+                "train_seat_feature": "3",
+                "train_type_code": "4",
+                "start_province_code": "33",始发车省份
+                "start_city_code": "0712",始发车城市编号
+                "end_province_code": "23",终点站省份
+                "end_city_code": "2003",终点站省份
+                "seat_types": "OMO",
+                "location_code": "H1",
+                "from_station_no": "01",
+                "to_station_no": "05",
+                "control_day": 29,
+                "sale_time": "1430",
+                "is_support_card": "0",
+                "controlled_train_flag": "0",
+                "controlled_train_message": "正常车次，不受控",
+                "gg_num": "--",
+                "gr_num": "--",高级软卧
+                "qt_num": "--",
+                "rw_num": "--",软卧
+                "rz_num": "--",软座
+                "tz_num": "--",特等 座
+                "wz_num": "无",无座
+                "yb_num": "--",
+                "yw_num": "--",硬卧
+                "yz_num": "--",硬座
+                "ze_num": "无",二等 座
+                "zy_num": "无",一等 座
+                "swz_num": "--" 商务坐
+            },
+            "secretStr": "",
+            "buttonTextInfo": "预订"
+        },
