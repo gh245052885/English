@@ -3,6 +3,7 @@ var http = require("http"),
 	superagent = require("superagent"),
 	cheerio = require("cheerio"),
 	async = require("async"),
+	moment = require('moment'),
 	eventproxy = require('eventproxy');
 var log4js = require('log4js');
 log4js.configure({
@@ -19,13 +20,12 @@ var catchFirstUrl = 'http://www.cnblogs.com/',	//入口页面
 	urlsArray = [],	//存放爬取网址
 	catchDate = [],	//存放爬取数据
 	pageUrls = [],	//存放收集文章页面网站
-	pageNum = 200,	//要爬取文章的页数
+	pageNum = 1,	//要爬取文章的页数
 	startDate = new Date(),	//开始时间
 	endDate = false;	//结束时间
 var strurl = '';
 for (var i = 1; i <= pageNum; i++) {
 	strurl = 'http://www.cnblogs.com/?CategoryId=808&CategoryType=%22SiteHome%22&ItemListActionName=%22PostList%22&PageIndex=' + i + '&ParentCategoryId=0';
-	//logger.info(strurl);
 	pageUrls.push(strurl);
 }
 
@@ -65,7 +65,7 @@ function personInfo(url) {
 				infoArray.fans = info.eq(3).text();
 				infoArray.focus = info.eq(4).text();
 			}
-			onsole.log('用户信息:' + JSON.stringify(infoArray));
+			console.log('用户信息:' + JSON.stringify(infoArray));
 			logger.info('用户信息:' + JSON.stringify(infoArray));
 			catchDate.push(infoArray);
 		});
@@ -88,12 +88,13 @@ function start() {
 		res.writeHead(200, { 'Content-Type': 'text/html;charset=utf-8' });
 		// 当所有 'BlogArticleHtml' 事件完成后的回调触发下面事件
 		ep.after('BlogArticleHtml', pageUrls.length * 20, function (articleUrls) {
-
+			var s2 = moment(new Date()).format("YYYY-MM-DD HH:mm:ss");
+			console.log("s2=ep.after");
 			// 获取 BlogPageUrl 页面内所有文章链接
 			for (var i = 0; i < articleUrls.length; i++) {
 				res.write(articleUrls[i] + '<br/>');
 			}
-			console.log('articleUrls.length is' + articleUrls.length + ',content is :' + articleUrls);
+			console.log('articleUrls.length is' + articleUrls.length);
 
 			//控制并发数
 			var curCount = 0;
@@ -145,7 +146,6 @@ function start() {
 				reptileMove(url, callback);
 			}, function (err, result) {
 				endDate = new Date();
-
 				console.log('final:');
 				console.log(result);
 				console.log(catchDate);
@@ -187,6 +187,8 @@ function start() {
 
 		// 轮询 所有文章列表页
 		pageUrls.forEach(function (pageUrl) {
+			var s2 = moment(new Date()).format("YYYY-MM-DD HH:mm:ss");
+			console.log("s2-pageUrls.forEach=" + s2);
 			superagent.get(pageUrl)
 				.end(function (err, pres) {
 					console.log('fetch ' + pageUrl + ' successful');
@@ -195,9 +197,6 @@ function start() {
 					if (err) {
 						console.log(err);
 					}
-					// pres.text 里面存储着请求返回的 html 内容，将它传给 cheerio.load 之后
-					// 就可以得到一个实现了 jquery 接口的变量，我们习惯性地将它命名为 `$`
-					// 剩下就都是 jquery 的内容了
 					var $ = cheerio.load(pres.text);
 					var curPageUrls = $('.titlelnk');
 					for (var i = 0; i < curPageUrls.length; i++) {

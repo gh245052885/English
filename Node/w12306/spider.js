@@ -68,7 +68,7 @@ function queryTickets(config) {
                     });
             });
         });
-}
+};
 var rule = new schedule.RecurrenceRule();
 rule.second = [0];
 schedule.scheduleJob(rule, function () {

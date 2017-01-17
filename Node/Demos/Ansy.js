@@ -5,4 +5,4 @@ fs.readFile('input.txt', function (err, data) {
     console.log(data.toString());
 });
 
-console.log("程序执行结束!");
+console.log("over!");

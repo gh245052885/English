@@ -13,6 +13,7 @@
     "cheerio": "^0.22.0",
     "eventproxy": "^0.3.5",
     "log4js": "^1.1.0",
+    "moment": "^2.17.1",
     "superagent": "^3.3.2"
   }
 }
