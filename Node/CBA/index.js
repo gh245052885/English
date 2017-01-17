@@ -1,11 +1,11 @@
 var https = require('https');
 var superagent = require('superagent');
 var eventproxy = require('eventproxy');
-//var url = require('url');
+var url = require('url');
 var fs = require('fs');
 var cheerio = require('cheerio');
 var nodemailer = require('nodemailer');
-var schedule = require('node-schedule');//may be replace by setInterval
+var schedule = require('node-schedule');//may be replace by setInterval//supervisor
 var log4js = require('log4js');
 log4js.configure({
     appenders: [
@@ -16,28 +16,35 @@ log4js.configure({
 var logger = log4js.getLogger('log');
 var config = {
     url: 'http://cbadata.sports.sohu.com/sch/all/',
+    rooturl: 'http://cbadata.sports.sohu.com/',
     time: '2017-01-21',//
-    train_num: 'G370',//
 };
-var yz_temp = '', yw_temp = '';//保存余票状态
+var yz_temp = '', yw_temp = '';//
 function queryTickets(config) {
     superagent.get(config.url)
         .end(function (err, sres) {
-            // 常规的错误处理
             if (err) {
                 return next(err);
             }
             var topicUrls = [];
-            // sres.text 里面存储着网页的 html 内容，将它传给 cheerio.load 之后
             var $ = cheerio.load(sres.text);
             var items = [];
-
             $('.cutE').find('table').find('tr').each(function (idx, element) {
-                var $element = $(element);
-                var href = "";//url.resolve(config.url, $element.attr('href'));
+                var tdArr = $(this).children();
+                for (var i = 0; i < tdArr.length; i++) {
+                    //console.log((i+1) +": "+ tdArr.eq(i).find('a').attr('href'));
+                }
+                var bs_team = tdArr.eq(0).text();
+                var bs_url = tdArr.eq(3).find('a').attr('href');
+                var href = '';
+                if (typeof (bs_url) == 'undefined') {
+                    console.log('true'+bs_team);
+                } else {
+                    href = url.resolve(config.rooturl, bs_url);
+                }
                 items.push({
-                    title: $element.attr('title'),
-                    href: $element.attr('href')
+                    title: bs_team,
+                    href: href
                 });
                 topicUrls.push(href);
             });
