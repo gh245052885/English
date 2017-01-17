@@ -17,8 +17,8 @@ var config = {
     from_station: 'ZZF',//始发站车站代码，这里是
     end_station: 'SHH',//
     train_num: 'G370',//车次
-    your_mail: '****@163.com',//你自己的邮箱，我这里用的是163邮箱，如果你要改其他类型的邮箱的话，那请你修改transporter里的服务器信息
-    mail_pass: '****'//放心写吧
+    your_mail: 'xfxbnb@163.com',
+    mail_pass: '88'//放心写吧
 };
 //https://kyfw.12306.cn/otn/leftTicket/log?leftTicketDTO.train_date=2017-01-21
 //&leftTicketDTO.from_station=SHH&leftTicketDTO.to_station=ZZF&purpose_codes=ADULT
@@ -32,15 +32,15 @@ function queryTickets(config) {
     };
     var req = https.get(options, function (res) {
         var data = '';
-        /*  var transporter = nodemailer.createTransport({
-              host: "smtp.163.com",//邮箱的服务器地址，如果你要换其他类型邮箱（如QQ）的话，你要去找他们对应的服务器，
-              secureConnection: true,
-              port: 465,//端口，这些都是163给定的，自己到网上查163邮箱的服务器信息
-              auth: {
-                  user: config.your_mail,//邮箱账号
-                  pass: config.mail_pass,//邮箱密码
-              }
-          });*/
+        var transporter = nodemailer.createTransport({
+            host: "smtp.163.com",
+            secureConnection: true,
+            port: 465,
+            auth: {
+                user: config.your_mail,//邮箱账号
+                pass: config.mail_pass,//邮箱密码
+            }
+        });
         res.on('data', function (buff) {
             data += buff;//查询结果（JSON格式）
         });
@@ -50,7 +50,6 @@ function queryTickets(config) {
             for (var i = 0; i < jsonData.length; i++) {
                 var cur = jsonData[i];
                 if (true) {
-
                     logger.info("cur:" + cur.queryLeftNewDTO.station_train_code.toString() + " " +
                         cur.queryLeftNewDTO.train_type_code + " " +
                         cur.queryLeftNewDTO.swz_num);
@@ -61,7 +60,7 @@ function queryTickets(config) {
                 if (cur.queryLeftNewDTO.station_train_code == config.train_num) {
                     // console.log(cur);
                     console.log(config.train_num);
-                    console.log('商务座:'+cur.queryLeftNewDTO.swz_num);
+                    console.log('商务座:' + cur.queryLeftNewDTO.swz_num);
                     var yz = cur.queryLeftNewDTO.yz_num;//硬座数目
                     var yw = cur.queryLeftNewDTO.yw_num;//硬卧数目
                     var trainNum = cur.queryLeftNewDTO.station_train_code;//车次
@@ -73,24 +72,24 @@ function queryTickets(config) {
                             return;
                         }
                         var mailOptions = {
-                            from: config.your_mail, // 发件邮箱地址
-                            to: config.your_mail, // 收件邮箱地址，可以和发件邮箱一样
+                            from: config.your_mail, // 
+                            to: config.your_mail, // 
                             subject: trainNum + '有票啦，硬座：' + yz + '，硬卧：' + yw, // 邮件标题
                             text: trainNum + '有票啦\n' + '时间是' + cur.queryLeftNewDTO.start_train_date + ',\n出发时间:' + cur.queryLeftNewDTO.start_time + ',\n到达时间:' + cur.queryLeftNewDTO.arrive_time + ',\n历时：' + cur.queryLeftNewDTO.lishi + ',\n始发站：' + cur.queryLeftNewDTO.from_station_name + ',\n到达：' + cur.queryLeftNewDTO.to_station_name, // 邮件内容
                         };
                         // 发邮件部分
-                        /* transporter.sendMail(mailOptions, function (error, info) {
-                             if (error) {
-                                 return console.log(error);
-                             }
-                             console.log('Message sent: ' + info.response);
-                             yw_temp = yw;//保存当前列车的余票数量
-                             yz_temp = yz;
-                         });*/
+                        transporter.sendMail(mailOptions, function (error, info) {
+                            if (error) {
+                                return console.log(error);
+                            }
+                            console.log('Message sent: ' + info.response);
+                            yw_temp = yw;//保存当前列车的余票数量
+                            yz_temp = yz;
+                        });
                     } else {
                         console.log('硬座/硬卧无票');
-                        logger.info("cur:" + cur.queryLeftNewDTO.station_train_code);
-                        logger.error("WU piao");
+                        //logger.info("piao:" + cur.queryLeftNewDTO.station_train_code);
+                        //logger.error("WU piao");
                     }
 
                     break;
