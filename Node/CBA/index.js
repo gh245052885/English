@@ -34,7 +34,7 @@ function queryTickets(config) {
                 for (var i = 0; i < tdArr.length; i++) {
                     //console.log((i+1) +": "+ tdArr.eq(i).find('a').attr('href'));
                 }
-                var bs_team = tdArr.eq(0).text();
+                var bs_team = tdArr.eq(2).text();
                 var bs_url = tdArr.eq(3).find('a').attr('href');
                 var href = '';
                 if (typeof (bs_url) == 'undefined') {
@@ -42,6 +42,7 @@ function queryTickets(config) {
                 } else {
                     href = url.resolve(config.rooturl, bs_url);
                 }
+                 console.log('href:'+href);
                 items.push({
                     title: bs_team,
                     href: href

@@ -30,3 +30,11 @@ $ npm install express-generator -g
 express myapp
 var cheerio = require('cheerio');	// html 解析
 npm install log4js//log
+
+### 常用库
+* moment 时间函数
+* supervisor
+* cheerio html 解析
+* node-schedule 定时函数
+* eventproxy  控制并发
+* nodemailer 邮件

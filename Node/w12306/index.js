@@ -106,5 +106,6 @@ var rule = new schedule.RecurrenceRule();
 rule.second = [0];
 schedule.scheduleJob(rule, function () {
     queryTickets(config);
+    console.log("2017");
     console.log('scheduleCronstyle:' + new Date());
 }); 
