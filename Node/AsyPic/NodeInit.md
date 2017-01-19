@@ -41,3 +41,9 @@ npm install log4js//log
 #### node-schedule
 * rule.minute = [0, 30];  every 30
 * rule.minute = [0, 15, 45];  ervery 15
+### SuperAgent
+* https://cnodejs.org/topic/5378720ed6e2d16149fa16bd
+### cheerio
+* https://cnodejs.org/topic/5203a71844e76d216a727d2e
+### json
+* node格式化输出（漂亮的）json文件 
