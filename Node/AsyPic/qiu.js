@@ -6,6 +6,7 @@ var http = require("http"),
     moment = require('moment'),
     eventproxy = require('eventproxy');
 var log4js = require('log4js'); var fs = require("fs");
+var util = require('util');
 //var filedown=require("./filedown");
 log4js.configure({
     appenders: [
@@ -24,9 +25,10 @@ var ep = new eventproxy();
 var catchFirstUrl = 'http://www.qiushibaike.com/pic/',	//入口页面
     deleteRepeat = {},	//去重哈希数组
     urlsArray = [],	//存放爬取网址
+    doneImgArray = [],	//存放爬取网址
     catchDate = [],	//存放爬取数据
     pageUrls = [],	//存放收集文章页面网站
-    pageNum = 6,	//要爬取文章的页数
+    pageNum = 15,	//要爬取文章的页数
     startDate = new Date(),	//开始时间
     endDate = false;	//结束时间
 var strurl = '';
@@ -39,14 +41,21 @@ for (var i = 2; i <= pageNum; i++) {
     strurl = 'http://www.qiushibaike.com/pic/page/' + i + '/?s=4949019';
     pageUrls.push(strurl);
 }
-
+function contains(arr, str) {
+    var i = arr.length;
+    while (i--) {
+        if (arr[i] === str) {
+            return true;
+        }
+    }
+    return false;
+}
 // 主start程序
 function start() {
     console.log("start");
     // 当所有 'BlogArticleHtml' 事件完成后的回调触发下面事件
     ep.after('BlogArticleHtml', pageUrls.length * 20, function (articleUrls) {
         var s2 = moment(new Date()).format("YYYY-MM-DD HH:mm:ss");
-        // 获取 BlogPageUrl 页面内所有文章链接
         for (var i = 0; i < articleUrls.length; i++) {
         }
         console.log('articleUrls.length is:' + articleUrls.length);
@@ -57,7 +66,7 @@ function start() {
             //延迟毫秒数
             var delay = parseInt((Math.random() * 30000000) % 1000, 10);
             curCount++;
-            //console.log('现在的并发数是', curCount, '，正在抓取的是', url, '，耗时' + delay + '毫秒');
+            console.log('现在的并发数是', curCount, '，正在抓取的是', url, '，耗时' + delay + '毫秒');
             downImg(url);
             setTimeout(function () {
                 curCount--;
@@ -81,11 +90,11 @@ function start() {
         var s2 = moment(new Date()).format("YYYY-MM-DD HH:mm:ss");
         superagent.get(pageUrl)
             .end(function (err, res) {
-                logger.info('fetch ' + pageUrl + ' [end]');
-                logger.info('res.status: ' + res.status + ' [end]');
+                logger.info('fetch ' + pageUrl + ' ');
+                logger.info('res.status: [' + res.status + ']');
                 // 常规的错误处理
                 if (err) {
-                    console.log('get url err');
+                    logger.error('get url err:' + pageUrl);
                 }
                 if (res.status === 200) {
                     // var $ = cheerio.load(pres.text);
@@ -110,9 +119,14 @@ function downImg(imgurl) {
     //console.log('imgurl:'+narr.length);
     var tempfilename = narr[0] + narr[1] + narr[2] + "_" + narr[4];
     var filename = "./upload/topic2/" + tempfilename;
-    fs.stat(filename, (exists) => {
-        if (exists) {
-            console.error('myfile already exists:'+filename);
+    contains(doneImgArray, tempfilename);
+    logger.info("dasdfasd"+contains(doneImgArray, tempfilename));
+    fs.stat(filename, (err, stats) => {
+        logger.info("exists:" + err + " /");
+        logger.info(console.log(stats));
+        var exists = true;
+        if (!exists) {
+            logger.info('myfile already exists:' + tempfilename);
         } else {
             http.get(imgurl, function (res) {
                 var imgData = "";
@@ -128,6 +142,7 @@ function downImg(imgurl) {
                             console.log('downerr');
                         } else {
                             console.log('downImg-writeFile:' + tempfilename);
+                            doneImgArray.push(tempfilename);
                         }
                     });
                 });

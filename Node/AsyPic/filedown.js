@@ -10,12 +10,14 @@ var urls = [];
 var sumConut = 0;
 var reptCount = 0;		// 重复的
 var downCount = 0;		// 实际下载的
-
+var pagemax = 30;		// 获取到多少页的内容
+var startindex = 1;		// 从多少页开始获取
+var img = '';
 /**
  * 下载图片
  * @param {String} imgurl：图片地址
  */
-function downImg(imgurl) {
+exports.myDownImg = function downImg(imgurl) {
     var narr = imgurl.replace("http://image.haha.mx/", "").split("/")
     // 做一步优化，如果存在文件，则不下载
     var filename = "./upload/topic1/" + narr[0] + narr[1] + narr[2] + "_" + narr[4];
@@ -63,7 +65,3 @@ function downImg(imgurl) {
     }
 }
 
-var pagemax = 30;		// 获取到多少页的内容
-var startindex = 1;		// 从多少页开始获取
-var img='';
-exports.downImg = downImg(dd);

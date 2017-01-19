@@ -38,3 +38,6 @@ npm install log4js//log
 * node-schedule 定时函数
 * eventproxy  控制并发
 * nodemailer 邮件
+#### node-schedule
+* rule.minute = [0, 30];  every 30
+* rule.minute = [0, 15, 45];  ervery 15
