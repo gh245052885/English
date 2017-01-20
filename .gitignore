@@ -8,3 +8,8 @@
 /Node/CBA/node_modules
 /Node/Logs/12306.log
 /Node/Logs/*.log
+/Node/Log4js/node_modules
+/Node/Log4js/warn
+/Node/Log4js/debug
+/Node/Log4js/err
+/Node/Log4js/info
