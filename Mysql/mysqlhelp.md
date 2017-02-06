@@ -51,3 +51,20 @@ select DATEDIFF(date_add(curdate()-day(curdate())+1,interval 1 month ),DATE_ADD(
      还有其他的相关时间函数
 
  ## 基本查询
+ 、查看 MySQL 数据库服务器和数据库字符集。
+
+　mysql> show variables like '%char%';
+
+二、查看 MySQL 数据表（table） 的字符集。
+
+　mysql> show table status from sqlstudy_db like '%countries%';
+
+三、查看 MySQL 数据列（column）的字符集。
+
+　mysql> show full columns from countries;
+
+四、查看当前安装的 MySQL 所支持的字符集。
+
+　　mysql> show charset;
+
+　　mysql> show char set;
