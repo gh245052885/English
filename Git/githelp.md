@@ -27,3 +27,4 @@ git remote add origin git@github.com:wyyyy/learngit.git
 * 1.先在网站建立一个库
 * 2.$ git clone git@github.com:wyyyy/gitskills.git
 后面的地址可以到网站上面参考一下
+打开 Git Bash 命令工具生成密码
