@@ -1,5 +1,7 @@
+## 全局变量
 在JavaScript中，全局变量有两种声明方式
-
+### 显示声明
+### 隐式
 使用 var 显示声明的全局变量
 不使用 var 声明的隐式全局变量
 两者的区别在于是否能通过 delete 操作符删除
@@ -34,10 +36,11 @@ Object.getOwnPropertyDescriptor(window, a); // {value: "a", writable: true, enum
 Object.getOwnPropertyDescriptor(window, b); // {value: "b", writable: true, enumerable: true, configurable: true}
 两者的根本区别在于显式声明的变量不可配置，不能通过 delete 操作符删除
 
-需要注意的是 configurable 值一旦为 false，描述属性特性的对象就不能被修改，因此不能通过修改属性描述符使得显示声明的全局变量能被 delete 删除，但反过来，可以使隐式声明的全局变量也不能被 delete 删除
+需要注意的是 configurable 值一旦为 false，描述属性特性的对象就不能被修改，因此不能通过修改属性描述符使得显示声明的全局变量能被 delete 删除，
+但反过来，可以使隐式声明的全局变量也不能被 delete 删除
 
 b = 'b';
 var descriptor = Object.getOwnPropertyDescriptor(window, b);
 descriptor.configurable = false;
 Object.defineProperty(window, b, descriptor);
-delete b; // 返回 false 
+delete b; //  false 
