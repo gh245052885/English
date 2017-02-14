@@ -52,13 +52,130 @@ Where our ancestors first joined together in peace.
 * Valedictorian
 * fluff butt. badge
 * fuzzy bunny.Bellwether mayor
-### 5.告别家乡
+### 5.say bye
 * The only thing we have to fear is fear itself.
 * deterrent repellant
 *  Everyone wins!
 * 
-### 6.来到动物邦
-* Complementary Greasy
-* deterrent repellant
-*  Everyone wins!
+### 6.go 
+* Complementary Greasy  Rickety 
+* you're even cuter than I thought you'd be.
+* The guy everyone thinks is just a flabby donutloving cop, stereotyping you..
+* That poor little bunny's gonna get eaten alive.
+* get to roll call
+
+### 7.
+* You ready to make the world a better place?
+* docket  recruits  acknowledge mammal 
+* All predators. From a giant polar bear to a teensy little otter.
+* And City Hall is right up my tail to find them.
+* Parking duty Dismissed
+
+### 8.
+* but I don't want any trouble in here. So hit the road!
+*  So hit the road! 请滚蛋
+* joints goofy Isn't that adorable?
+* You're holding up the line.
+
+### 9.
+* snot  I can't thank you enough My treat.
+*   I just want to say you're a great dad and just a real articulate fella.
+*  that is high praise.
 * 
+### 10
+* I stood up for you
+*  Permit. Receipt of declared commerce.
+* 
+### 11
+* 
+* Sly fox. Dumb bunny.
+* Our prayers have been answered! Glorious day!
+* wet cement. 
+
+### 12
+* 
+* Tomorrow is another day.
+* Sir, if you have a grievance you may contest recitation in traffic court.
+* Stop in the name of the law!
+* did you see those leopard print jeggings?
+* wait in line just like everyone else
+* I popped the weasel!
+
+### 13 
+* she's super slippery.
+* moldy onions.
+*  we're doing everything we can.
+* florist 
+* He would never just disappear.
+
+### 14
+* insubordination 
+* The Mammal Inclusion Initiative is really starting to pay off.
+*  delusion of grandeur,
+* Assistant Mayor Bellwether!
+* 
+### 15
+*  And time is money. Hop along.
+* otter
+*   It's called a hustle, sweet heart.
+* The murder weapon!It means I have a lead.
+* Then we'll have to do this the hard way.
+* Felony tax evasion.
+* Unfortunately, lying on a federal form is a punishable offense.
+* Have fun working with the fuzz!
+* 
+* 
+### 16 自然俱乐部
+* It's not exactly a place for a cute little bunny
+* Cause we're all good on bunny scout cookies.
+* Haven't seen him in a couple of weeks
+* yoga instructor.
+*  I'd appericiate that more than you can imagine, 
+* We're a naturalist club!
+### 17
+*  You didn't happen to catch the licence plate number
+*  I can't run a plate.
+* You can't keep me on the hook forever.
+* I have a pal at the DMV.We are really fighting the clock and every minute counts.
+* sloths
+* 
+### 18
+*  Hundred Yard Dash!
+* We are in a really big hurry.
+* Can we please just focus on the task?
+* Way to hustle, 
+* 
+* Pregnant ['preɡnənt] 
+* limo ['liməu]   n. 豪华轿车
+### 19
+* warrant It's a bummer.
+* Does seeing me fail somehow make you feel better about your own sad, miserable life?
+* Long time, no see.
+* 
+* 
+ ### 20
+* sweet cheese 'n crackers.
+* You come here unannounced on the day my daughter is to be married.
+* generosity  disrespected
+* mime
+* 
+### 21
+* No icing anyone at my wedding!
+* From that giant donut!
+* I will take your kindness, and pay it forward.
+* florist He's like a part of the family.
+* 
+### 22
+* You should be asking what happened to me.
+*  
+* There was no warning. He just kept yelling about the Night Howlers.
+* 
+### 23
+* Now I can tell you're a little tense, 
+* so I'm just gonna give you a little personal space
+*  
+* 
+*
+ ### 24
+ * you gave her a clown vest, and a threewheeled jokemobile,
+ * So if you'll excuse us, we have a very big lead to follow and a case to crack.
