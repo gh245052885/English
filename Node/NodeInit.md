@@ -87,7 +87,7 @@ npm install log4js//log
 * rule.minute = [0, 15, 45];  ervery 15
 ### SuperAgent
 * https://cnodejs.org/topic/5378720ed6e2d16149fa16bd
-* http://visionmedia.github.io/superagent/
+* http://visionmedia.github.io/superagent/  https://www.npmjs.com/package/superagent
 ### cheerio
 * https://cnodejs.org/topic/5203a71844e76d216a727d2e
 ### json

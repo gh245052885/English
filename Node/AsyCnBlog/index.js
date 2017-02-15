@@ -1,2 +1,5 @@
 var server=require("./server");
-server.start();
+var query=require("./query");
+// server.start();
+query.query();
+//supervisor index.js
