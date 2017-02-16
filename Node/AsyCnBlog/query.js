@@ -20,6 +20,9 @@ var config = {
 };
 var yz_temp = '', yw_temp = '';//
 function queryTickets(config) {
+    //.query({ name: '%CD%F5%D5%BC%BB%AA', registerCode: '1..5' })
+    // .query({ name: '%CD%F5%D5%BC%BB%AA' }) 
+    //.query({ registerCode: '411282198409190516' }) 
     superagent.get(config.rooturl)
         .end(function (err, sres) {
             if (err) {
