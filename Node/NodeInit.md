@@ -70,7 +70,7 @@ supervisor 会监听当前目录下 node 和 js 后缀的文件，当这些文�
 $ npm install express-generator -g
 
 面的示例就是在当前工作目录下创建一个命名为 myapp 的应用。
-
+ff
 express myapp
 var cheerio = require('cheerio');	// html 解析
 npm install log4js//log
