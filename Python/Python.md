@@ -9,4 +9,8 @@ debug launch.json 中的配置文件
   ##错误说明 
   SyntaxError  语法错误
   TypeErroe http://www.pythondoc.com/pythontutorial27/controlflow.html
-  
+  python 中一切都是对象，严格意义我们不能说值传递还是引用传递，我们应该说传不可变对象和传可变对象
+  在 python 中，strings, tuples, 和 numbers 是不可更改的对象，而 list,dict 等则是可以修改的对象。
+更改不可更改的对象，相当于重新生成了一个对象，
+list dict 修改其的值是修改其内部空间的值 
+
