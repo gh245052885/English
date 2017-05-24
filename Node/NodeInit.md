@@ -92,3 +92,5 @@ npm install log4js//log
 * https://cnodejs.org/topic/5203a71844e76d216a727d2e
 ### json
 * node格式化输出（漂亮的）json文件 
+
+npm view jquery versions
