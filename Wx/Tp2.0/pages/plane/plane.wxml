@@ -1,0 +1,24 @@
+<view>
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+    <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">当前</view>
+    <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">全部</view>
+    <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">所有</view>
+    <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">其他</view>
+  </scroll-view>
+  <swiper class="tab-content" current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+
+    <view class="item-ans"  wx:for="{{myarray}}">
+      <view class="avatar">
+        <image class="img" src="../../image/gok.png"></image>
+      </view>
+      <view class="expertInfo">
+        <view class="name">{{item.addStart}}--{{item.addEnd}}</view>
+        <view class="tag">{{lbldtStart}}{{item.dtStart}}</view>
+        <view class="tag">{{lbldtEnd}}{{item.dtEnd}}</view>
+        <view class="answerHistory">途径：{{item.way}} </view>
+      </view>
+      <navigator url="/pages/detail/detail" class="askBtn">详细</navigator>
+    </view>
+  </swiper>
+
+</view>

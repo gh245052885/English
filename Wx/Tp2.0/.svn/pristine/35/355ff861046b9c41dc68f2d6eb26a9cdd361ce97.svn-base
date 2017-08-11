@@ -1,0 +1,70 @@
+<!--pages/train/train.wxml-->
+
+<view class="page-top">
+  <swiper indicator-dots="true" style="width:100%;height:100%;">
+    <swiper-item>
+      <image src="../../images/top/train.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/top/totoro.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/top/totoro2.jpg"></image>
+    </swiper-item>
+
+  </swiper>
+</view>
+<view class="bg">
+  <view class="container" style="z-index:1000;">
+    <view class="query-head">
+      <view class="tab tag">
+        <text>火车票</text>
+      </view>
+
+    </view>
+    <view class="query-box">
+      <view class="query-row query-city">
+        <view class="begin-city">
+          <text class="city">上海</text>
+        </view>
+        <view class="switch">
+          <image class="switch-img" src="../../images/switch.png"></image>
+        </view>
+        <view class="end-city">
+          <text class="city">广州</text>
+        </view>
+      </view>
+      <view class="query-row query-date">
+        <view>
+          <text class="date">11月28日</text>
+        </view>
+        <view>
+          <text class="day">明天</text>
+        </view>
+      </view>
+      <view class="query-row query-date">
+        <view class="section">
+          <picker mode="date" value="{{date}}" start="2017-01-01" end="2017-12-31" bindchange="bindDateChange">
+            <view class="picker">
+              日期: {{dates}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="query-row btn-query">
+        <button type="primary" style="background-color:#5495E6">查询</button>
+      </view>
+      <view class="query-history">
+        <scroll-view scroll-x="true">
+          <text wx:for="{{trainHistories}}">{{index + 1}}.{{item.begin}} -> {{item.end}}</text>
+        </scroll-view>
+      </view>
+      <view class="query-row">
+        <scroll-view scroll-x="true">
+        </scroll-view>
+      </view>
+    </view>
+
+  </view>
+</view>

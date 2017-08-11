@@ -1,0 +1,53 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+  <view class="query-box">
+    <view class="query-row query-city">
+      <view class="begin-city" bindtap="bindViewTap">
+        <text class="city-descript">出发城市</text>
+        <text class="city">上海</text>
+      </view>
+      <view class="switch">
+      </view>
+      <view class="end-city">
+        <text class="city-descript">到达城市</text>
+        <text class="city">苏州</text>
+      </view>
+    </view>
+    <view class="query-row query-date">
+        <view class="picker">
+          <text class="city-descript">出发日期</text>
+          <text class="date">{{dtstart}}</text>
+        </view>
+
+        <view class="picker">
+          <text class="city-descript">结束日期</text>
+          <text class="date">{{dtend}}</text>
+        </view>
+
+    </view>
+    <view class="query-row query-city">
+      <view class="picker">
+        <text class="city-descript">途径城市：</text>
+        <text class="city-descript">河南</text>
+      </view>
+    </view>
+    <view class="query-row query-city">
+      <view class="picker">
+        <text class="city-descript">当前状态：申请中</text>
+        <text class="city-descript">申请时间：2017-05-02</text>
+        <text class="date">申请中</text>
+      </view>
+    </view>
+
+    <view class="query-history">
+      <scroll-view scroll-x="true">
+        <text wx:for="{{coachHistories}}">{{item.begin}} -> {{item.end}}</text>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="query-box extension">
+    <view class="query-row">
+
+    </view>
+  </view>
+</view>

@@ -1,0 +1,51 @@
+<!--pages/coach/coach.wxml-->
+<view class="page-top">
+  <image src="../../images/top/coach.jpg"></image>
+</view>
+<view class="bg">
+  <view class="container">
+    <view class="query-box">
+      <view class="query-row query-city">
+        <view class="begin-city" bindtap="bindViewTap">
+          <text class="city-descript">出发城市</text>
+          <text class="city">{{city}}</text>
+        </view>
+        <view class="switch">
+          <image class="switch-img" src="../../images/switch.png"></image>
+        </view>
+        <view class="end-city">
+          <text class="city-descript">到达城市</text>
+          <text class="city">苏州</text>
+        </view>
+      </view>
+      <view class="query-row query-date">
+        <picker mode="date" value="{{date}}" start="2017-01-01" end="2019-1-23" bindchange="bindDateChange">
+          <view class="picker">
+            <text class="city-descript">出发日期</text>
+            <text class="date">{{dates}}</text>
+          </view>
+        </picker>
+
+        <picker mode="date" value="{{date}}" start="2017-01-01" end="2019-1-23" bindchange="bindDateChange">
+          <view class="picker">
+            <text class="city-descript">结束日期</text>
+            <text class="date">{{dates}}</text>
+          </view>
+        </picker>
+      </view>
+      <view class="query-row btn-query">
+        <button type="primary" style="background-color:#5495E6">申请</button>
+      </view>
+      <view class="query-history">
+        <scroll-view scroll-x="true">
+          <text wx:for="{{coachHistories}}">{{item.begin}} -> {{item.end}}</text>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="query-box extension">
+      <view class="query-row">
+
+      </view>
+    </view>
+  </view>
+</view>

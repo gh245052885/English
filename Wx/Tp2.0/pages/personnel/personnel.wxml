@@ -1,0 +1,51 @@
+<!--pages/personnel/personnel.wxml-->
+<view class="page-top">
+    <image src="../../images/top/personnel.jpg"></image>
+</view>
+<view class="bg">
+    <view class="container">
+        <view class="query-box">
+            <view class="query-row extension">
+               
+                <view class="extension-item">
+                    <image src="../../images/extension/personnel-extension3.png"></image>
+                    <text>头牌订单</text>
+                </view>
+                <view class="extension-item">
+                    <image src="../../images/extension/personnel-extension4.png"></image>
+                    <text>其他订单</text>
+                </view>
+            </view>            
+        </view>          
+    </view>
+    <view class="personnel-item" style="box-shadow:0rpx -20rpx 50rpx 0rpx #eee;margin-bottom:20rpx;">
+        <image src="../../images/icon/treasure.png"></image>
+        <view class="personnel-descript" style="border:none;">
+            <text style="font-weight:800">我的头牌</text>
+            <text class="action">{{userInfo.nickName}}</text>
+        </view>
+    </view>
+   
+    <view class="personnel-item">
+        <image src="../../images/icon/message.png"></image>
+        <view class="personnel-descript">
+            <text>消息中心</text>
+            <text class="action"></text>
+        </view>
+    </view>
+    <view class="personnel-item">
+        <image src="../../images/icon/advise.png"></image>
+        <view class="personnel-descript">
+            <text>产品意见</text>
+            <text class="action"></text>
+        </view>
+    </view>
+    <view class="personnel-item">
+        <image src="../../images/icon/more.png"></image>
+        <view class="personnel-descript" style="border:none">
+            <text>更多</text>
+            <text class="action"></text>
+        </view>
+    </view>
+</view>
+
