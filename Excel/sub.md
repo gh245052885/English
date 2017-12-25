@@ -23,3 +23,6 @@
 
 
 
+Qdutt is a PC tool for ddr related testing,Qdutt can collect ddi outputs and analyze test results.and provide an 
+
+optmal ddr setting to some extent.
